@@ -1,0 +1,36 @@
+body{
+ 	padding-top: 70px; 
+}
+#left_row{
+	float: left;
+	width:200px;
+}
+.list-group-item{
+	text-align:center;
+	background-color:#DBDBDB;
+	border-top-color: white;
+}
+#right_row{
+	margin-left: 250px;
+}
+#outter{
+	border-width: 0px;
+	width:100%;
+}
+.td_style{
+	padding: 8px;
+}
+.input_style{
+	border-style: hidden;
+	border-radius: 5px;
+	width: 500px;
+	height: 35px;
+}
+.child_li{
+	background-color: #FEFEFE;
+	border-color: #FEFEFE;
+	height: 50px;
+}
+.menson{
+	display: none;
+}

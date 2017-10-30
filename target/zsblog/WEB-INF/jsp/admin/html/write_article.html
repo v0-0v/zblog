@@ -39,7 +39,8 @@
     <table border="0">
         <tr >
             <td class="td_style"><label>日志标题：</label></td>
-            <td class="td_style"><input type="text" class="input_style" name="title"/></td>
+            <td class="td_style"><input type="text" class="input_style" name="title" value="请在这里输入标题"
+                                        onclick="change_value(this)"/></td>
         </tr>
         <tr>
             <td class="td_style"><label>作者：</label></td>
@@ -58,6 +59,7 @@
     </table>
     <br/>
     <textarea id="editor_id" name="content" style="width:700px;height:300px;">
+        请在这里输入文日志内容
     </textarea>
 </div>
 
@@ -74,6 +76,9 @@
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_id');
     });
+    function change_value(){
+        this.value = "";
+    }
 </script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>新建博客</title>
+    <title>blog后台管理</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,45 +36,16 @@
 
 <body>
 <div class="jumbotron">
-    <table border="0">
-        <tr >
-            <td class="td_style"><label>日志标题：</label></td>
-            <td class="td_style"><input type="text" class="input_style" name="title"/></td>
-        </tr>
-        <tr>
-            <td class="td_style"><label>作者：</label></td>
-            <td class="td_style"><input type="text" class="input_style" name="author" value=""/></td>
-        </tr>
-        <tr>
-            <td class="td_style"><label>请选择文章分类：</label></td>
-            <td class="td_style">
-                <button type="button" class="btn btn-default btn-sm" id="sel_cate">请选择</button>
-            </td>
-        </tr>
-        <tr>
-            <td class="td_style"><label>上传图片：</label></td>
-            <td class="td_style"><button type="button" class="btn btn-default btn-sm" id="upload_img">上传</button></td>
-        </tr>
-    </table>
-    <br/>
-    <textarea id="editor_id" name="content" style="width:700px;height:300px;">
-    </textarea>
+    <h1>Welcome!!!</h1>
+    <p>Here is the admin system!!</p>
 </div>
-
-
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
-<script src="js/layer/layer.js"></script>
-<script charset="UTF-8" src="js/kindeditor-all.js"></script>
-<script>
-    KindEditor.ready(function(K) {
-        window.editor = K.create('#editor_id');
-    });
-</script>
 </body>
 </html>
-
