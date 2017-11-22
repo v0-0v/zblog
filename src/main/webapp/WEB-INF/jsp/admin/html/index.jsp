@@ -71,7 +71,7 @@
             <!-- id="addArt" 添加日志操作的id值-->
             <a class="list-group-item arti_op" href="javascript:void(0)" id="arti_op">日志操作</a>
             <ul class="list-unstyled menson" id="arti_op_ul">
-                <li ><a class="list-group-item child_li" id="addArt" href="javascript:void(0)">写日志</a></li>
+                <li ><a class="list-group-item child_li" id="addArt" href="/zblog/catego">写日志</a></li>
                 <li ><a class="list-group-item child_li" href="#">所有日志</a></li>
             </ul>
             <a class="list-group-item arti_op" href="javascript:void(0)" id="cate_op">日志操作</a>

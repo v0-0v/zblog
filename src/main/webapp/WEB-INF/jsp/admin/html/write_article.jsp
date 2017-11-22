@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,7 +18,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>blog后台管理</title>
+    <title>新建博客</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +29,7 @@
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
 
+    <link href="css/select2.min.css" rel="stylesheet">
     <link href="css/admintest.css" rel="stylesheet" >
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -41,8 +43,7 @@
     <![endif]-->
 </head>
 
-<body >
-
+<body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -71,7 +72,7 @@
             <!-- id="addArt" 添加日志操作的id值-->
             <a class="list-group-item arti_op" href="javascript:void(0)" id="arti_op">日志操作</a>
             <ul class="list-unstyled menson" id="arti_op_ul">
-                <li ><a class="list-group-item child_li" id="addArt" href="/zblog/catego">写日志</a></li>
+                <li ><a class="list-group-item child_li" id="addArt" href="/catego">写日志</a></li>
                 <li ><a class="list-group-item child_li" href="#">所有日志</a></li>
             </ul>
             <a class="list-group-item arti_op" href="javascript:void(0)" id="cate_op">日志操作</a>
@@ -92,28 +93,51 @@
     </div>
     <div id="right_row">
         <div class="jumbotron">
-            <h1>Welcome!!!</h1>
-            <p>Here is the admin system!!</p>
+            <table border="0">
+                <tr >
+                    <td class="td_style"><label>日志标题：</label></td>
+                    <td class="td_style"><input type="text" class="input_style" name="title"/></td>
+                </tr>
+                <tr>
+                    <td class="td_style"><label>作者：</label></td>
+                    <td class="td_style"><input type="text" class="input_style" name="author" value=""/></td>
+                </tr>
+                <tr>
+                    <td class="td_style"><label>请选择文章分类：</label></td>
+                    <td class="td_style">
+                        <select id="sel_cat">
+                            <c:forEach items="${cateList}" var="cl">
+                                <option value="${cl.cate_id}">${cl.categories}</option>
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <textarea id="editor_id" name="content" style="width:700px;height:300px;">
+            </textarea>
         </div>
     </div>
-</div><!-- /.container -->
-
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <script src="js/index.js"></script>
 <script src="js/layer/layer.js"></script>
+<script src="js/article/article.js"></script>
+<script src="js/select2/select2.min.js"></script>
 <script charset="UTF-8" src="js/kindeditor-all.js"></script>
 <script>
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_id');
     });
+    $(document).ready(function(){
+        $("#sel_cat").select2();
+    })
 </script>
 </body>
 </html>
+

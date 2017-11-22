@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
     @RequestMapping(path = "/main")
     public String index(){
-
         return "jsp/admin/html/index";
     }
 }
